@@ -1,0 +1,21 @@
+body, html {
+     width: 100%;
+     display: flex;
+     margin: 0;
+     padding: 0;
+     background-image: url("https://source.unsplash.com/1600x900/?nature");
+     background-repeat: repeat;
+     background-size: cover;
+     align-items: center;
+     flex-direction: column;
+}
+
+canvas {
+     width: 210mm;
+     height: 297mm;
+     margin-bottom: 50mm;
+     background-color: white;
+}
+.toolkit {
+     margin-top: 50mm;
+}
