@@ -29,6 +29,11 @@ export function mouseclick(){
 
 let memory = document.getElementsByClassName("objects")[0].childNodes;
 
+
+/*
+     UPDATE LOOP
+*/
+
 export function update_global(){
 
      let click = mouseEvent.getclick;
@@ -45,13 +50,14 @@ export function update_global(){
                object.draw(ctx);
           }
           else if (memory[i].id >= object_temp.length && memory[i].getAttribute("objet_genre") === "image") {
-               let object = new Img_object();
+               let object = new Img_object(ctx);
                object.setId = memory[i].id;
                let size = JSON.stringify({"w": object.getDim.x, "h": object.getDim.y});
                memory[i].setAttribute("size", size);
-               object.setImg = object.innerText;
+               object.setImg = memory[i].innerText;
                object_temp.push(object);
-               object.draw(ctx, object.innerText);
+               object.draw(ctx, memory[i].getAttribute("context"));
+
           }
      }
      /* update mousecatch cookie*/
@@ -85,8 +91,8 @@ export function update_global(){
      }
      /* refresh */
      if(object_temp.length >= 0){
-          ctx.clearRect(0,0, window.innerWidth, window.innerHeight);
           reDrawObjects(ctx, object_temp);
+          ctx.clearRect(0,0, window.innerWidth, window.innerHeight);
      }
 
 }

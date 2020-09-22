@@ -5,7 +5,7 @@ export default class Img_object {
           this.w = 50;
           this.h = 12.5;
           this.context = context;
-          this.img;
+          this.img = "";
           this.id = 0;
           this.type = "image";
      }

@@ -15,7 +15,9 @@ export function rectangle_add(){
 function upload_img(event){
      let compatible = false;
      let file = event.target.files[0];
+
      if(file.size < 5e+8 && file.type.match("image.*")) compatible = true;
+
      if(compatible){
           let reader = new FileReader();
           reader.onload = ()=>{
