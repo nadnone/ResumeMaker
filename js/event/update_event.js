@@ -42,7 +42,7 @@ export function update_global(){
      for (let i = 0; i < memory.length; i++) {
           if(i === memory.length-1){mouseEvent.SetobjetCatched = i;}
           if(memory[i].id >= object_temp.length && memory[i].getAttribute("objet_genre") === "rectangle") {
-               let object = new Rectangle();
+               let object = new Rectangle(ctx);
                object.setId = memory[i].id;
                let size = JSON.stringify({"w": object.getDim.x, "h": object.getDim.y});
                memory[i].setAttribute("size", size);
@@ -91,8 +91,8 @@ export function update_global(){
      }
      /* refresh */
      if(object_temp.length >= 0){
-          reDrawObjects(ctx, object_temp);
           ctx.clearRect(0,0, window.innerWidth, window.innerHeight);
+          reDrawObjects(ctx, object_temp);
      }
 
 }
